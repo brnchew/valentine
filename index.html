@@ -123,6 +123,18 @@
       const yesSound = document.getElementById("yesSound");
       const yesBtn = document.getElementById("yesBtn");
 
+      const textOptions = [
+        "No 🤪",
+        "Try again 😏",
+        "Nope 🙅",
+        "Not happening 😒",
+        "Never 🚫",
+        "Maybe? 🤔",
+        "Absolutely not 🙈",
+        "Hard pass 💪",
+        "Keep trying 😉"
+      ];
+
       function moveNoButton() {
         noSound.currentTime = 0;
         noSound.play();
@@ -141,6 +153,9 @@
         noBtn.style.position = "absolute";
         noBtn.style.left = x + "px";
         noBtn.style.top = y + "px";
+
+        const randomText = textOptions[Math.floor(Math.random() * textOptions.length)];
+        noBtn.textContent = randomText;
       }
 
       noBtn.addEventListener("pointerenter", (e) => {
